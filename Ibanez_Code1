@@ -1,4 +1,4 @@
-// Submited by: Gabriel Christian M. Ibanez
+//Submitted by: Gabriel Christian M. Ibanez
 // create a login class to identify if user is an admin or not
 class Login {
   String Email;
@@ -22,7 +22,7 @@ class Login {
         return 'Player';
     }
   }
-  //checking game license
+  //checking game license(abstraction)
   checkGameLicense(){
     print('Checking Game License....');
     if (gameLicense =="2214-1125-676" ){
@@ -34,7 +34,7 @@ class Login {
      
   }
   
-  //logging in to game
+  //logging in to game (abstraction)
   login(){
     checkIfUserIsRegistered();
     checkGameLicense();
@@ -64,7 +64,7 @@ class Car{
   }
 }
 
-// bike inherits Car
+// bike inherits Car (inheritance)
 class Bike extends Car{
   void accelerate(){
     print('KRING KRING (bell sounds)');
@@ -103,3 +103,12 @@ void main(){
   
 }
 
+
+
+
+
+  
+  
+  
+
+  
