@@ -1,0 +1,105 @@
+// Submited by: Gabriel Christian M. Ibanez
+// create a login class to identify if user is an admin or not
+class Login {
+  String Email;
+  String Pass;
+  String gameLicense;
+  
+  //checking if user is registered
+  checkIfUserIsRegistered(){
+    print("Checking if user is registered");
+  }
+  //checking if user is either an admin or a player
+  checkUserRole(){
+    print("Checking if Admin or player");
+    if (Email == 'admin@gmail.com'){
+      print('User is an admin');
+        return 'admin';
+    }
+    
+    else{
+      print('User is a Player');
+        return 'Player';
+    }
+  }
+  //checking game license
+  checkGameLicense(){
+    print('Checking Game License....');
+    if (gameLicense =="2214-1125-676" ){
+      print('License verified!\n');
+    }
+    else{
+      print('Sorry, it seems like you have not bought this game');
+    }
+     
+  }
+  
+  //logging in to game
+  login(){
+    checkIfUserIsRegistered();
+    checkGameLicense();
+    String Role = checkUserRole();
+    print('logging in as '+ Role +'...');
+    if (Role == 'Player'){
+      print('Logged in!\n\nWELCOME TO RAZE TRACK RACING GAME!!! \n\n');
+    }
+    else{
+    print('Logged in!\n\nOpening hidden Functions....');
+    print('Welcome to game editor \n\n');
+    }
+  }
+  
+  
+  // constructor
+  Login(this.Email, this.Pass, this.gameLicense)
+  ;}
+
+
+class Car{
+  void run(){
+    print('VROOOOOOOOOM!');
+  }  
+  void brake(){
+    print('SHRIIIIIEEEEK!!!!');
+  }
+}
+
+// bike inherits Car
+class Bike extends Car{
+  void accelerate(){
+    print('KRING KRING (bell sounds)');
+  }
+}
+
+
+//Polymorphism
+class Motor extends Car{
+  @override
+  void run(){
+    print("BROOOOOM BROOOOOM!!!");
+  }
+}
+
+
+
+//Main code
+void main(){
+  Login email = Login('abc@gmail.com', '123456', "2214-1125-676");//user 1
+  email.login();
+  Motor user = Motor();
+  user.run();
+  user.brake();
+  
+  print('\n');
+  Login email2 = Login('abc@gmail.com', '123456', "2214-1125-676");//user 2
+  email2.login();
+  Bike user2 = Bike();
+  user2.accelerate();
+  
+  print('\n');
+  Login email3 = Login('admin@gmail.com', '765321', "2214-1125-676");//user 3
+  email3.login();
+  
+  
+}
+
