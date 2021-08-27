@@ -3,7 +3,7 @@
 class Login {
   String Email;
   String Pass;
-  String gameLicense;
+  String _gameLicense; //encapsulation
   
   //checking if user is registered
   checkIfUserIsRegistered(){
@@ -25,7 +25,7 @@ class Login {
   //checking game license(abstraction)
   checkGameLicense(){
     print('Checking Game License....');
-    if (gameLicense =="2214-1125-676" ){
+    if (_gameLicense =="2214-1125-676" ){
       print('License verified!\n');
     }
     else{
@@ -51,7 +51,7 @@ class Login {
   
   
   // constructor
-  Login(this.Email, this.Pass, this.gameLicense)
+  Login(this.Email, this.Pass, this._gameLicense)
   ;}
 
 
